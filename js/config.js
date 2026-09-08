@@ -19,8 +19,8 @@ const CASAL = {
 
   // ----- FESTA (recepção) -----
   festa: "Sindicato dos Químicos",
-  festaEndereco: "Próximo à Kanjiko — Salto/SP",
-  festaMapa: "https://maps.google.com/?q=Sindicato+dos+Qu%C3%ADmicos+Salto+SP",
+  festaEndereco: "R. Batalha do Riachuelo, 6820 — Centro de Lazer do Sindicato dos Trabalhadores das Indústrias Químicas, Salto/SP",
+  festaMapa: "https://maps.google.com/?q=R.+Batalha+do+Riachuelo,+6820,+Centro+de+Lazer+Sindicato+dos+Trabalhadores+das+Ind%C3%BAstrias+Qu%C3%ADmicas,+Salto+SP",
 
   // (compatibilidade — o site usa os campos acima)
   local: "Paróquia São Benedito",
@@ -33,8 +33,12 @@ const CASAL = {
   // Deixe "" para usar o monograma elegante padrão.
   fotoHero: "",
   fotoHistoria: "",
-  // Contato para os convidados tirarem dúvidas
-  contato: "(11) 90000-0000",
+  // Contato para os convidados tirarem dúvidas (WhatsApp)
+  contato: "(11) 97951-1534 e (11) 96857-2530",
+  whatsapp: [
+    { numero: "11979511534", rotulo: "WhatsApp 1" },
+    { numero: "11968572530", rotulo: "WhatsApp 2" },
+  ],
 };
 
 /* Senha do painel do casal (admin.html) — TROQUE por uma de vocês! */

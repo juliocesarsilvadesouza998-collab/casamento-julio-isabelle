@@ -52,7 +52,19 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("festa-mapa").href = c.festaMapa;
     }
     document.getElementById("local-contato").textContent = `Fale com os noivos: ${c.contato}`;
-    document.getElementById("local-whatsapp").href = `https://wa.me/55${c.contato.replace(/\D/g, "")}`;
+    const wa = document.getElementById("local-whatsapp");
+    const wa2 = document.getElementById("local-whatsapp2");
+    if (c.whatsapp && c.whatsapp.length) {
+      wa.href = `https://wa.me/55${c.whatsapp[0].numero}`;
+      wa.textContent = `${c.whatsapp[0].rotulo} →`;
+      if (wa2) {
+        wa2.href = `https://wa.me/55${c.whatsapp[1] ? c.whatsapp[1].numero : c.whatsapp[0].numero}`;
+        wa2.textContent = `${c.whatsapp[1] ? c.whatsapp[1].rotulo : c.whatsapp[0].rotulo} →`;
+      }
+    } else {
+      wa.href = `https://wa.me/55${c.contato.replace(/\D/g, "")}`;
+      if (wa2) wa2.style.display = "none";
+    }
     document.getElementById("footer-mono").textContent = c.iniciais;
     document.getElementById("footer-nomes").textContent = `${c.noivo} & ${c.noiva}`;
     document.getElementById("footer-data").textContent = c.dataFooter || "";
