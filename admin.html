@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel dos Noivos — Admin</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-body">
+
+  <header class="admin-header">
+    <div class="container">
+      <h1>💍 Painel dos Noivos</h1>
+      <a href="index.html" class="back">← Voltar ao site</a>
+    </div>
+  </header>
+
+  <!-- Tela de senha -->
+  <div class="admin-lock" id="lock">
+    <div class="card">
+      <h2>Área restrita</h2>
+      <p>Digite a senha do casal para acessar o painel.</p>
+      <form id="lock-form">
+        <div class="form-group">
+          <input type="password" id="lock-senha" placeholder="Senha" autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-livre">Entrar 🔓</button>
+      </form>
+      <p class="modal-note alert" id="lock-erro" style="display:none;">Senha incorreta. Tente novamente.</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo do painel -->
+  <div class="container" id="painel" style="display:none; padding-bottom: 80px;">
+    <div class="admin-stats">
+      <div class="stat"><div class="n" id="st-total">0</div><div class="l">Presentes na lista</div></div>
+      <div class="stat"><div class="n" id="st-reservados">0</div><div class="l">Reservados</div></div>
+      <div class="stat"><div class="n" id="st-comprados">0</div><div class="l">Comprados</div></div>
+      <div class="stat"><div class="n" id="st-pendentes">0</div><div class="l">Disponíveis</div></div>
+      <div class="stat"><div class="n" id="st-rsvp">0</div><div class="l">Confirmações</div></div>
+    </div>
+
+    <div class="admin-actions-bar">
+      <button class="btn btn-sm btn-secondary" onclick="AdminJS.exportarCSV()">📥 Exportar CSV</button>
+      <button class="btn btn-sm btn-secondary" onclick="AdminJS.adicionarItem()">➕ Adicionar presente</button>
+      <button class="btn btn-sm btn-danger" onclick="AdminJS.restaurarDemo()">♻️ Restaurar lista de exemplo</button>
+      <button class="btn btn-sm btn-danger" onclick="AdminJS.limparTudo()">🗑️ Zerar reservas e RSVP</button>
+    </div>
+
+    <div class="admin-section">
+      <div class="sec-head">
+        <h3>🎁 Presentes e status</h3>
+        <div class="actions">
+          <button class="btn btn-sm btn-secondary" onclick="AdminJS.toggleForm()">➕ Novo presente</button>
+        </div>
+      </div>
+      <div class="admin-form" id="admin-form" style="display:none;">
+        <div class="form-group"><label>Nome do presente</label><input type="text" id="f-nome" /></div>
+        <div class="form-group"><label>Descrição</label><input type="text" id="f-desc" /></div>
+        <div class="form-group"><label>Preço (R$)</label><input type="number" id="f-preco" min="0" step="0.01" /></div>
+        <div class="form-group"><label>Loja</label><input type="text" id="f-loja" /></div>
+        <div class="form-group"><label>Categoria</label>
+          <select id="f-cat">
+            <option>Cozinha</option><option>Eletroportáteis</option><option>Cama &amp; Banho</option>
+            <option>Casa</option><option>Lazer</option><option>Lua de Mel</option><option>Pessoal</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Emoji</label><input type="text" id="f-emoji" maxlength="4" placeholder="🍳" /></div>
+        <div class="full" style="display:flex;gap:10px;">
+          <button class="btn btn-livre" onclick="AdminJS.salvarNovoItem()">Salvar presente</button>
+          <button class="btn btn-secondary" onclick="AdminJS.toggleForm()">Cancelar</button>
+        </div>
+      </div>
+      <div id="tabela-presentes"></div>
+    </div>
+
+    <div class="admin-section">
+      <div class="sec-head">
+        <h3>📝 Reservas e compras</h3>
+      </div>
+      <div id="tabela-reservas"></div>
+    </div>
+
+    <div class="admin-section">
+      <div class="sec-head">
+        <h3>💌 Confirmações de presença</h3>
+      </div>
+      <div id="tabela-rsvp"></div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

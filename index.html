@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Júlio &amp; Isabelle — Nosso Casamento</title>
+  <meta name="description" content="Site do nosso casamento: lista de presentes, confirmação de presença e todas as informações do grande dia." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="#inicio" class="nav-brand"><span id="nav-iniciais">J <span class="amp">&amp;</span> M</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#historia">Nossa História</a></li>
+        <li><a href="#presentes">Lista de Presentes</a></li>
+        <li><a href="#rsvp">Confirme sua Presença</a></li>
+        <li><a href="#local">Data &amp; Local</a></li>
+        <li><a href="#presentes" class="nav-cta">🎁 Dar um Presente</a></li>
+      </ul>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="inicio">
+    <div class="hero-inner">
+      <p class="hero-save" id="hero-save">Save the Date</p>
+      <h1 class="hero-names"><span id="hero-noivo">Júlio</span> <span class="amp">&amp;</span> <span id="hero-noiva">Isabelle</span></h1>
+      <div class="hero-date" id="hero-data">3 de Abril de 2027 · 15h30</div>
+      <div class="hero-monogram" id="hero-monograma">J &amp; I</div>
+
+      <div class="countdown-wrap">
+        <div class="countdown" id="countdown">
+          <div class="cd-item"><div class="cd-num" id="cd-dias">--</div><div class="cd-label">Dias</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-item"><div class="cd-num" id="cd-horas">--</div><div class="cd-label">Horas</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-item"><div class="cd-num" id="cd-min">--</div><div class="cd-label">Min</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-item"><div class="cd-num" id="cd-seg">--</div><div class="cd-label">Seg</div></div>
+        </div>
+      </div>
+
+      <a href="#presentes" class="hero-cta">🎁 Ver Lista de Presentes</a>
+    </div>
+    <div class="hero-scroll">⌄</div>
+  </header>
+
+  <!-- Nossa História -->
+  <section class="section" id="historia">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Nossa História</div>
+        <h2 class="section-title">Como tudo começou</h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-photo" id="story-photo">
+          <div class="story-mono" id="story-mono">J &amp; I</div>
+          <div class="frame"></div>
+        </div>
+        <div class="story-text">
+          <p id="historia-texto"></p>
+          <blockquote class="story-quote" id="historia-frase"></blockquote>
+          <div class="story-quote-author" id="historia-frase-autor"></div>
+          <div class="story-signature">
+            <div class="mono" id="signature-mono">J &amp; I</div>
+            <div>
+              <div class="who" id="signature-nomes">Júlio &amp; Isabelle</div>
+              <div class="role">Noivos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lista de Presentes -->
+  <section class="section section-alt" id="presentes">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Lista de Presentes</div>
+        <h2 class="section-title" id="lista-titulo">Lista de Presentes</h2>
+        <p class="section-sub" id="lista-subtitulo"></p>
+      </div>
+
+      <div class="registry-progress">
+        <div class="icon">🎁</div>
+        <div class="info">
+          <strong id="progresso-texto">0 de 0 presentes garantidos</strong>
+          <span id="progresso-detalhe">Reserve o seu antes que outra pessoa escolha!</span>
+        </div>
+        <div class="registry-bar"><i id="progresso-barra"></i></div>
+      </div>
+
+      <div class="registry-toolbar">
+        <div class="filter-chips" id="filter-chips"></div>
+        <div class="registry-search">
+          <input type="text" id="busca" placeholder="Buscar presente..." />
+        </div>
+      </div>
+
+      <div class="gifts-grid" id="gifts-grid"></div>
+      <div class="registry-empty" id="registry-empty" style="display:none;">
+        <div class="big">🔍</div>
+        <p>Nenhum presente encontrado com esses filtros.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="section" id="rsvp">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">RSVP</div>
+        <h2 class="section-title">Confirme sua presença</h2>
+        <p class="section-sub">Sua presença é o nosso maior presente. Diga que você vai!</p>
+      </div>
+      <div class="rsvp-card">
+        <form id="rsvp-form">
+          <div class="form-group">
+            <label for="rsvp-nome">Seu nome completo</label>
+            <input type="text" id="rsvp-nome" placeholder="Ex.: Maria da Silva" required />
+          </div>
+          <div class="form-group">
+            <label for="rsvp-email">E-mail (opcional)</label>
+            <input type="email" id="rsvp-email" placeholder="voce@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="rsvp-presenca">Vai comparecer?</label>
+            <select id="rsvp-presenca">
+              <option value="sim">Sim, com certeza! 🎉</option>
+              <option value="nao">Não poderei ir, mas estarei torcendo 💛</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="rsvp-acompanhantes">Número de convidados (você incluso)</label>
+            <select id="rsvp-acompanhantes">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="rsvp-recado">Recado para os noivos (opcional)</label>
+            <textarea id="rsvp-recado" rows="3" placeholder="Escreva uma mensagem carinhosa..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-livre" style="width:100%;">Confirmar Presença 💌</button>
+        </form>
+        <div class="rsvp-done" id="rsvp-done" style="display:none;">
+          <div class="big">💌</div>
+          <h3>Presença confirmada!</h3>
+          <p>Obrigado! Contamos com você nesse dia tão especial. Mal podemos esperar! 🤍</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data & Local -->
+  <section class="section section-alt" id="local">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Data &amp; Local</div>
+        <h2 class="section-title">O grande dia</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="ico">📅</div>
+          <h4>Data</h4>
+          <p id="local-data">3 de Abril de 2027<br />15h30</p>
+        </div>
+        <div class="info-card">
+          <div class="ico">⛪</div>
+          <h4>Cerimônia</h4>
+          <p id="local-nome">Paróquia São Benedito<br /><span id="local-endereco" style="color:var(--muted);font-size:.85rem;">Salto/SP</span></p>
+          <a class="link" id="local-mapa" href="#" target="_blank" rel="noopener">Ver no mapa →</a>
+        </div>
+        <div class="info-card">
+          <div class="ico">🥂</div>
+          <h4>Festa</h4>
+          <p id="festa-nome">Sindicato dos Químicos<br /><span id="festa-endereco" style="color:var(--muted);font-size:.85rem;">Próximo à Kanjiko — Salto/SP</span></p>
+          <a class="link" id="festa-mapa" href="#" target="_blank" rel="noopener">Ver no mapa →</a>
+        </div>
+        <div class="info-card alt">
+          <div class="ico">💌</div>
+          <h4>Traje</h4>
+          <p>Esporte fino.<br />Venha com conforto e muito amor.</p>
+        </div>
+        <div class="info-card">
+          <div class="ico">📞</div>
+          <h4>Dúvidas?</h4>
+          <p id="local-contato">Fale com os noivos pelo WhatsApp</p>
+          <a class="link" id="local-whatsapp" href="#" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="mono" id="footer-mono">J &amp; I</div>
+      <div class="names" id="footer-nomes">Júlio &amp; Isabelle</div>
+      <div class="date" id="footer-data">03 · 04 · 2027</div>
+      <div class="divider"></div>
+      <p class="msg">Obrigado por fazerem parte da nossa história. Mal podemos esperar para celebrar com vocês! 🤍</p>
+      <p class="made">Feito com amor para o nosso grande dia</p>
+    </div>
+  </footer>
+
+  <!-- Modal de reserva -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Fechar">✕</button>
+      <div class="gift-mini">
+        <div class="thumb" id="modal-thumb">🎁</div>
+        <div>
+          <div class="nm" id="modal-nome">Presente</div>
+          <div class="pr" id="modal-preco">R$ 0</div>
+        </div>
+      </div>
+      <h3 id="modal-titulo">Reservar presente</h3>
+      <p class="lead" id="modal-lead">Preencha seu nome para reservar este presente. Assim, evitamos presentes repetidos!</p>
+      <form id="modal-form">
+        <div class="form-group">
+          <label for="modal-nome-convidado">Seu nome</label>
+          <input type="text" id="modal-nome-convidado" placeholder="Ex.: Maria" required autocomplete="name" />
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-livre" id="modal-btn-reservar">🎁 Reservar</button>
+          <button type="button" class="btn btn-secondary" id="modal-btn-comprei">✅ Já comprei!</button>
+        </div>
+      </form>
+      <p class="modal-note" id="modal-note">Reservado? Depois você pode marcar como comprado.</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-wrap" id="toast-wrap"></div>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
