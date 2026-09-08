@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const corCategoria = (cat) => CAT_STYLES[cat] || "linear-gradient(140deg,#EFEAE2,#E4DCD0)";
 
   /* ---------- Helpers ---------- */
-  const fmt = (v) => v === 0 ? "Valor livre" : "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
+  const fmt = (v) => (v === null || v === undefined) ? "" : (v === 0 ? "Valor livre" : "R$ " + v.toLocaleString("pt-BR", { minimumFractionDigits: 2 }));
   const inicial = (nome) => (nome || "?").trim().charAt(0).toUpperCase();
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3 class="gift-name">${esc(p.nome)}</h3>
           ${p.descricao ? `<p class="gift-desc">${esc(p.descricao)}</p>` : ""}
           <div class="gift-meta">
-            <span class="gift-price">${fmt(p.preco)}</span>
+            ${p.preco !== null && p.preco !== undefined ? `<span class="gift-price">${fmt(p.preco)}</span>` : ""}
             ${p.loja ? `<span class="gift-store">🏬 ${esc(p.loja)}</span>` : ""}
           </div>
           <div class="gift-action">${botao}</div>
@@ -205,7 +205,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `<img src="${esc(item.img)}" alt="${esc(item.nome)}" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" onerror="this.outerHTML='<span style=font-size:1.6rem;>${item.emoji}</span>'" />`
       : item.emoji;
     document.getElementById("modal-nome").textContent = item.nome;
-    document.getElementById("modal-preco").textContent = fmt(item.preco);
+    const precoEl = document.getElementById("modal-preco");
+    if (item.preco !== null && item.preco !== undefined) {
+      precoEl.textContent = fmt(item.preco);
+      precoEl.style.display = "";
+    } else {
+      precoEl.textContent = "";
+      precoEl.style.display = "none";
+    }
 
     const nomeInput = document.getElementById("modal-nome-convidado");
     nomeInput.value = StorageAPI.getGuestName() || "";

@@ -4,7 +4,7 @@
 
 const AdminJS = (() => {
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const fmt = (v) => v === 0 ? "Valor livre" : "R$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 2 });
+  const fmt = (v) => (v === null || v === undefined) ? "—" : (v === 0 ? "Valor livre" : "R$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 2 }));
   const CAT_STYLES = {
     "Cozinha": "linear-gradient(140deg,#F3E1DC,#E9CDC8)",
     "Eletroportáteis": "linear-gradient(140deg,#ECE3E2,#DDD0CF)",

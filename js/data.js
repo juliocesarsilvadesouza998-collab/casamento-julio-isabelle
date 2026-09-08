@@ -7,7 +7,7 @@ const PRESENTES = [
     id: "p1",
     nome: "Conjunto de Panelas",
     descricao: "Conjunto de panelas antiaderente",
-    preco: 399,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Cozinha",
     emoji: "🍳",
@@ -18,7 +18,7 @@ const PRESENTES = [
     id: "p2",
     nome: "Airfryer Tipo Forno",
     descricao: "Airfryer tipo forno Mondial",
-    preco: 549,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Eletroportáteis",
     emoji: "🍟",
@@ -29,7 +29,7 @@ const PRESENTES = [
     id: "p3",
     nome: "Liquidificador 1500W",
     descricao: "Liquidificador Philco 1500W",
-    preco: 219,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Eletroportáteis",
     emoji: "🥤",
@@ -40,7 +40,7 @@ const PRESENTES = [
     id: "p4",
     nome: "Robô Aspirador",
     descricao: "Robô aspirador Xiaomi",
-    preco: 1299,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Casa",
     emoji: "🧹",
@@ -51,7 +51,7 @@ const PRESENTES = [
     id: "p5",
     nome: "Sofá Retrátil",
     descricao: "Sofá retrátil e reclinável",
-    preco: 1899,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Casa",
     emoji: "🛋️",
@@ -62,7 +62,7 @@ const PRESENTES = [
     id: "p6",
     nome: "Cotas para a Lua de Mel",
     descricao: "Ajude com qualquer valor para nossa lua de mel! 💛",
-    preco: 0,
+    preco: null, // valor removido do site
     loja: "Pix / Transferência",
     categoria: "Lua de Mel",
     emoji: "✈️",
@@ -73,7 +73,7 @@ const PRESENTES = [
     id: "p7",
     nome: "Lava Louças",
     descricao: "Lava louças Samsung",
-    preco: 2799,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Eletroportáteis",
     emoji: "🍽️",
@@ -84,7 +84,7 @@ const PRESENTES = [
     id: "p8",
     nome: "Jogo de Cama",
     descricao: "Jogo de cama queen",
-    preco: 259,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Cama & Banho",
     emoji: "🛏️",
@@ -95,7 +95,7 @@ const PRESENTES = [
     id: "p9",
     nome: "Filtro de Água de Galão",
     descricao: "Filtro de água de galão Philco",
-    preco: 149,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Casa",
     emoji: "💧",
@@ -106,7 +106,7 @@ const PRESENTES = [
     id: "p10",
     nome: "Sanduicheira Grill",
     descricao: "Sanduicheira grill Philco",
-    preco: 119,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Eletroportáteis",
     emoji: "🥪",
@@ -117,7 +117,7 @@ const PRESENTES = [
     id: "p11",
     nome: "Smart TV OLED",
     descricao: "Smart TV OLED",
-    preco: 3499,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Lazer",
     emoji: "📺",
@@ -128,7 +128,7 @@ const PRESENTES = [
     id: "p12",
     nome: "Roupão para o Casal",
     descricao: "Roupão de banho para o casal",
-    preco: 159,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Cama & Banho",
     emoji: "🛁",
@@ -139,7 +139,7 @@ const PRESENTES = [
     id: "p13",
     nome: "Quadro da Virgem do Caminho",
     descricao: "Quadro da Virgem do Caminho",
-    preco: 189,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Casa",
     emoji: "🖼️",
@@ -150,7 +150,7 @@ const PRESENTES = [
     id: "p14",
     nome: "Batedeira",
     descricao: "Batedeira Philco",
-    preco: 329,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Eletroportáteis",
     emoji: "🎂",
@@ -161,7 +161,7 @@ const PRESENTES = [
     id: "p15",
     nome: "Alexa",
     descricao: "Alexa — assistente virtual",
-    preco: 349,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Lazer",
     emoji: "🔊",
@@ -172,7 +172,7 @@ const PRESENTES = [
     id: "p16",
     nome: "Lava e Seca",
     descricao: "Lava e seca Philco",
-    preco: 3299,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Eletroportáteis",
     emoji: "🧺",
@@ -183,7 +183,7 @@ const PRESENTES = [
     id: "p17",
     nome: "Tanquinho de Roupa",
     descricao: "Tanquinho de roupa",
-    preco: 699,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Casa",
     emoji: "🫧",
@@ -194,7 +194,7 @@ const PRESENTES = [
     id: "p18",
     nome: "Mesa de Computador",
     descricao: "Mesa de computador",
-    preco: 449,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Casa",
     emoji: "🖥️",
@@ -205,7 +205,7 @@ const PRESENTES = [
     id: "p19",
     nome: "Chuteira Tamanho 42",
     descricao: "Chuteira tamanho 42",
-    preco: 299,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Pessoal",
     emoji: "⚽",
@@ -216,7 +216,7 @@ const PRESENTES = [
     id: "p20",
     nome: "Kit de Skincare",
     descricao: "Kit de skincare completo",
-    preco: 199,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Pessoal",
     emoji: "🧴",
@@ -227,7 +227,7 @@ const PRESENTES = [
     id: "p21",
     nome: "Guarda-Roupa Odisseia",
     descricao: "Guarda-roupa Odisseia 6 portas, 2 gavetas, com espelho",
-    preco: 1299,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Casa",
     emoji: "🚪",
@@ -238,7 +238,7 @@ const PRESENTES = [
     id: "p22",
     nome: "PS5 para o Noivo",
     descricao: "PlayStation 5 — presente do noivo 😉",
-    preco: 3999,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Lazer",
     emoji: "🎮",
@@ -249,7 +249,7 @@ const PRESENTES = [
     id: "p23",
     nome: "Cristaleira Londres",
     descricao: "Cristaleira 2 portas de vidro, 1 gaveta — Londres LB",
-    preco: 1499,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Casa",
     emoji: "🥃",
@@ -260,7 +260,7 @@ const PRESENTES = [
     id: "p24",
     nome: "Um Dia de Spa",
     descricao: "Cota para um dia de spa para a noiva 💆‍♀️",
-    preco: 299,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Lua de Mel",
     emoji: "💆‍♀️",
@@ -271,7 +271,7 @@ const PRESENTES = [
     id: "p25",
     nome: "Panela Elétrica",
     descricao: "Panela elétrica Philco",
-    preco: 199,
+    preco: null, // valor removido do site
     loja: "",
     categoria: "Eletroportáteis",
     emoji: "🍲",
