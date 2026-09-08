@@ -32,7 +32,7 @@ const CASAL = {
   // Fotos (opcional): cole o caminho/URL de uma foto de vocês.
   // Deixe "" para usar o monograma elegante padrão.
   fotoHero: "",
-  fotoHistoria: "",
+  fotoHistoria: "img/casal-historia.jpg",
   // Contato para os convidados tirarem dúvidas (WhatsApp)
   contato: "(11) 97951-1534 e (11) 96857-2530",
   whatsapp: [
